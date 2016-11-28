@@ -1,0 +1,26 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: electrolyte.work 
+  labels:
+    app: electrolyte.work
+spec:
+  replicas: 2
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: electrolyte.work
+        tier: nginx
+    spec:
+      containers:
+      - image: jefflaplante/electrolyte.work
+        name: electrolyte.work
+        ports:
+        - containerPort: 80 
+          name: electrolyte.work
+        resources:
+          limits:
+            cpu: 100m
+            memory: 50Mi
