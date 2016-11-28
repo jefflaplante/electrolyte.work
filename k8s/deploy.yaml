@@ -1,9 +1,9 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: electrolyte.work 
+  name: electrolytework 
   labels:
-    app: electrolyte.work
+    app: electrolytework
 spec:
   replicas: 2
   strategy:
@@ -11,15 +11,15 @@ spec:
   template:
     metadata:
       labels:
-        app: electrolyte.work
+        app: electrolytework
         tier: nginx
     spec:
       containers:
       - image: jefflaplante/electrolyte.work
-        name: electrolyte.work
+        name: electrolytework
         ports:
         - containerPort: 80 
-          name: electrolyte.work
+          name: electrolytework
         resources:
           limits:
             cpu: 100m
